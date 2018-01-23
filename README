@@ -41,17 +41,17 @@ WEBSITE
 
 The latest version of this package can be found at:
 
-	http://code.google.com/p/python-graph/
+	https://github.com/Shoobx/python-graph
 
 Please report bugs at:
 
-	http://code.google.com/p/python-graph/issues/list
+	https://github.com/Shoobx/python-graph/issues
 
 
 PROJECT COMMITTERS
 
 Pedro Matiello <pmatiello@gmail.com>
-	* Project maintainer/leader;
+	* Original author;
 	* Graph, Digraph and Hipergraph classes;
 	* Accessibility algorithms;
 	* Cut-node and cut-edge detection;
@@ -65,19 +65,16 @@ Pedro Matiello <pmatiello@gmail.com>
 	* Refactoring.
 
 Christian Muise <christian.muise@gmail.com>
-	* Project commiter;
 	* Dot file reading/writing;
 	* Hypergraph class;
 	* Refactoring.
 
 Salim Fadhley <sal@stodge.org>
-	* Project commiter;
 	* Porting of Roy Smith's A* implementation to python-graph;
 	* Edmond Chow's heuristic for A*;
 	* Refactoring.
 
 Tomaz Kovacic <tomaz.kovacic@gmail.com>
-	* Project commiter;
 	* Transitive edge detection;
 	* Critical path algorithm;
 	* Bellman-Ford algorithm;
@@ -93,7 +90,7 @@ Johannes Reinhardt <jreinhardt@ist-dein-freund.de>
 	* Maximum-flow algorithm;
 	* Gomory-Hu cut-tree algorithm;
 	* Refactoring.
-	
+
 Juarez Bochi <jbochi@gmail.com>
 	* Pagerank algorithm.
 

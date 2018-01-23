@@ -6,7 +6,7 @@ information.
 
 ATTRIBUTION:
 The artwork for the official logo of python-graph
-<http://code.google.com/p/python-graph/> was designed by Tomaž Kovačič
+<https://github.com/Shoobx/python-graph/> was designed by Tomaž Kovačič
 <http://tomazkovacic.com>.
 
 

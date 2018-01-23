@@ -48,7 +48,7 @@ docs: cleanpyc
 	cp -R ${CORE_DIR}/pygraph ${TEMP}
 	cp -Rn ${DOT_DIR}/pygraph ${TEMP}/pygraph/
 	epydoc -v --no-frames --no-sourcecode --name="python-graph" \
-		--url="http://code.google.com/p/python-graph/" \
+		--url="https://github.com/Shoobx/python-graph" \
 		--inheritance listed --no-private --html \
 		--graph classtree \
 		--css misc/epydoc.css -o docs ${TEMP}/pygraph/*.py \
