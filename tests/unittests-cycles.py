@@ -44,7 +44,7 @@ def verify_cycle(graph, cycle):
 class test_find_cycle(unittest.TestCase):
 
     # Graph
-    
+
     def test_find_cycle_on_graph(self):
         gr = testlib.new_graph()
         cycle = find_cycle(gr)
@@ -58,19 +58,19 @@ class test_find_cycle(unittest.TestCase):
         assert find_cycle(gr) == []
 
     # Digraph
-    
+
     def test_find_cycle_on_digraph(self):
         gr = testlib.new_digraph()
         cycle = find_cycle(gr)
         verify_cycle(gr, cycle)
-    
+
     def test_find_cycle_on_digraph_without_cycles(self):
         gr = testlib.new_digraph()
         st, pre, post = depth_first_search(gr)
         gr = digraph()
         gr.add_spanning_tree(st)
         assert find_cycle(gr) == []
-    
+
     def test_find_small_cycle_on_digraph(self):
         gr = digraph()
         gr.add_nodes([1, 2, 3, 4, 5])
@@ -81,18 +81,18 @@ class test_find_cycle(unittest.TestCase):
         gr.add_edge((2, 1))
         # Cycle: 1-2
         assert find_cycle(gr) == [1,2]
-    
+
     def test_find_cycle_on_very_deep_graph(self):
         gr = pygraph.classes.graph.graph()
-        gr.add_nodes(range(0,20001))
-        for i in range(0,20000):
+        gr.add_nodes(range(0,15001))
+        for i in range(0,15000):
             gr.add_edge((i,i+1))
         recursionlimit = getrecursionlimit()
         find_cycle(gr)
         assert getrecursionlimit() == recursionlimit
 
     # Regression
-    
+
     def test_regression1(self):
         G = digraph()
         G.add_nodes([1, 2, 3, 4, 5])
@@ -103,6 +103,6 @@ class test_find_cycle(unittest.TestCase):
         G.add_edge((3, 5))
         G.add_edge((3, 1))
         assert find_cycle(G) == [1, 2, 3]
-        
+
 if __name__ == "__main__":
     unittest.main()

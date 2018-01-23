@@ -44,7 +44,7 @@ class test_depth_first_search(unittest.TestCase):
         assert st == {}
         assert pre == []
         assert post == []
-    
+
     def test_dfs_in_graph(self):
         gr = testlib.new_graph()
         st, pre, post = depth_first_search(gr)
@@ -61,7 +61,7 @@ class test_depth_first_search(unittest.TestCase):
         assert st == {}
         assert pre == []
         assert post == []
-    
+
     def test_dfs_in_digraph(self):
         gr = testlib.new_digraph()
         st, pre, post = depth_first_search(gr)
@@ -71,11 +71,11 @@ class test_depth_first_search(unittest.TestCase):
                 assert post.index(each) < post.index(st[each])
         for node in st:
             assert gr.has_edge((st[node], node)) or st[node] == None
-    
+
     def test_dfs_very_deep_graph(self):
         gr = pygraph.classes.graph.graph()
-        gr.add_nodes(range(0,20001))
-        for i in range(0,20000):
+        gr.add_nodes(range(0,15001))
+        for i in range(0,15000):
             gr.add_edge((i,i+1))
         recursionlimit = getrecursionlimit()
         depth_first_search(gr, 0)
@@ -88,7 +88,7 @@ class test_breadth_first_search(unittest.TestCase):
         st, lo = breadth_first_search(gr)
         assert st == {}
         assert lo == []
-    
+
     def test_bfs_in_graph(self):
         gr = pygraph.classes.graph.graph()
         gr = testlib.new_digraph()
@@ -104,7 +104,7 @@ class test_breadth_first_search(unittest.TestCase):
         st, lo = breadth_first_search(gr)
         assert st == {}
         assert lo == []
-    
+
     def test_bfs_in_digraph(self):
         gr = testlib.new_digraph()
         st, lo = breadth_first_search(gr)
@@ -113,6 +113,6 @@ class test_breadth_first_search(unittest.TestCase):
                 assert lo.index(each) > lo.index(st[each])
         for node in st:
             assert gr.has_edge((st[node], node)) or st[node] == None
-            
+
 if __name__ == "__main__":
     unittest.main()

@@ -42,7 +42,7 @@ class test_topological_sorting(unittest.TestCase):
         st, pre, post = depth_first_search(gr)
         tree = pygraph.classes.digraph.digraph()
 
-        
+
         for each in st:
             if st[each]:
                 if (each not in tree.nodes()):
@@ -50,14 +50,14 @@ class test_topological_sorting(unittest.TestCase):
                 if (st[each] not in tree.nodes()):
                     tree.add_node(st[each])
                 tree.add_edge((st[each], each))
-        
+
         ts = topological_sorting(tree)
         for each in ts:
             if (st[each]):
                 assert ts.index(each) > ts.index(st[each])
-    
+
     def test_topological_sorting_on_digraph(self):
-        
+
         def is_ordered(node, list):
             # Has parent on list
             for each in list:
@@ -69,22 +69,22 @@ class test_topological_sorting(unittest.TestCase):
                 if (each in st):
                     return False
             return True
-            
+
         gr = testlib.new_digraph()
         ts = topological_sorting(gr)
-        
+
         while (ts):
             x = ts.pop()
             assert is_ordered(x, ts)
 
     def test_topological_sort_on_very_deep_graph(self):
         gr = pygraph.classes.graph.graph()
-        gr.add_nodes(range(0,20001))
-        for i in range(0,20000):
+        gr.add_nodes(range(0,15001))
+        for i in range(0,15000):
             gr.add_edge((i,i+1))
         recursionlimit = getrecursionlimit()
         topological_sorting(gr)
         assert getrecursionlimit() == recursionlimit
-            
+
 if __name__ == "__main__":
     unittest.main()
