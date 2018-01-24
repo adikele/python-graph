@@ -67,10 +67,10 @@ test-pre:
 	reset
 
 test: test-pre
-	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && python testrunner.py
+	PYTHONPATH=${PYTHONPATH} python tests/testrunner.py
 
 test3: test-pre
-	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && python3 testrunner.py
+	PYTHONPATH=${PYTHONPATH} python3 tests/testrunner.py
 
 tests: test
 

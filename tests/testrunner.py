@@ -23,7 +23,7 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 
 import sys
-sys.path.append('..')
+sys.path.append('./tests')
 import pygraph
 import unittest
 import testlib
@@ -34,7 +34,7 @@ log = logging.getLogger(__name__)
 
 def test_modules():
     modlist = []
-    for each in listdir('.'):
+    for each in listdir('tests'):
         if (each[0:9] == "unittests" and each[-3:] == ".py"):
             modlist.append(each[0:-3])
     return modlist
