@@ -3,13 +3,8 @@
 
 import os
 
+from setuptools import setup, find_packages
 
-try:
-    from setuptools import setup, find_packages
-except ImportError as ie:
-    import distribute_setup
-    distribute_setup.use_setuptools()
-    from setuptools import setup, find_packages
 
 # Startup
 appname = "python-graph-dot"
