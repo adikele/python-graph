@@ -74,8 +74,8 @@ class test_depth_first_search(unittest.TestCase):
 
     def test_dfs_very_deep_graph(self):
         gr = pygraph.classes.graph.graph()
-        gr.add_nodes(range(0,15001))
-        for i in range(0,15000):
+        gr.add_nodes(range(0,12001))
+        for i in range(0,12000):
             gr.add_edge((i,i+1))
         recursionlimit = getrecursionlimit()
         depth_first_search(gr, 0)

@@ -7,8 +7,9 @@ install:
     - travis_retry pip install -e ./core
     - travis_retry pip install -e ./dot
 script:
-    - cd tests; python testrunner.py
+    - cd tests
+    - python testrunner.py
 notifications:
     email: false
-#after_success:
-#    - coveralls
+after_success:
+    - coveralls

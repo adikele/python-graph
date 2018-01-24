@@ -79,12 +79,13 @@ class test_topological_sorting(unittest.TestCase):
 
     def test_topological_sort_on_very_deep_graph(self):
         gr = pygraph.classes.graph.graph()
-        gr.add_nodes(range(0,15001))
-        for i in range(0,15000):
+        gr.add_nodes(range(0,12001))
+        for i in range(0,12000):
             gr.add_edge((i,i+1))
         recursionlimit = getrecursionlimit()
         topological_sorting(gr)
         assert getrecursionlimit() == recursionlimit
+
 
 if __name__ == "__main__":
     unittest.main()

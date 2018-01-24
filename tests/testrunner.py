@@ -42,20 +42,21 @@ def test_modules():
 def run_tests():
     for each_size in testlib.sizes:
         print ("Testing with %s graphs" % each_size)
-        
+
         suite = unittest.TestSuite()
         testlib.use_size = each_size
-        
+
         for each_module in test_modules():
             try:
                 suite.addTests(unittest.TestLoader().loadTestsFromName(each_module))
             except ImportError as ie:
                 log.exception(ie)
                 continue
-        
+
         tr = unittest.TextTestRunner(verbosity=2)
         result = tr.run(suite)
         del suite
+    return result
 
 def main():
     try:
@@ -69,8 +70,8 @@ def main():
     print ("Random seed: %s" % testlib.random_seed)
     print ("--------------------------------------------------")
     print ("")
-    run_tests()
-   
+    result = run_tests()
+    sys.exit(1 if result.failures or result.errors else 0)
+
 if __name__ == "__main__":
     main()
-    
