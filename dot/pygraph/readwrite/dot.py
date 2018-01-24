@@ -56,7 +56,7 @@ def read(string):
     @return: Graph
     """
     
-    dotG = pydot.graph_from_dot_data(string)
+    dotG = pydot.graph_from_dot_data(string)[0]
     
     if (dotG.get_type() == "graph"):
         G = graph()
@@ -188,7 +188,7 @@ def read_hypergraph(string):
     @return: Hypergraph
     """
     hgr = hypergraph()
-    dotG = pydot.graph_from_dot_data(string)
+    dotG = pydot.graph_from_dot_data(string)[0]
     
     # Read the hypernode nodes...
     # Note 1: We need to assume that all of the nodes are listed since we need to know if they
