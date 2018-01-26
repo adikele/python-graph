@@ -4,6 +4,13 @@ A library for working with graphs in Python
 
 CHANGELOG
 
+Unreleased:
+
+Enhancements:
+	New location, and new main maintainers.
+	Various fixes and improvements to the Makefile and testrunning.
+	Automatic tests and coverage of master and pull request with Travis and Coveralls.
+
 
 Release 1.8.2 [July 14, 2012]
 

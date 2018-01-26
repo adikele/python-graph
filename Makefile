@@ -10,6 +10,8 @@ TESTS_DIR="tests/"
 DOCS_DIR="docs/"
 TEMP="temp/"
 PYTHONPATH="`pwd`/core:`pwd`/dot"
+PYTHON="python"
+PYTHON3="python3"
 
 
 # General ------------------------------------------------------------
@@ -67,10 +69,10 @@ test-pre:
 	reset
 
 test: test-pre
-	PYTHONPATH=${PYTHONPATH} python tests/testrunner.py
+	PYTHONPATH=${PYTHONPATH} ${PYTHON} tests/testrunner.py
 
 test3: test-pre
-	PYTHONPATH=${PYTHONPATH} python3 tests/testrunner.py
+	PYTHONPATH=${PYTHONPATH} ${PYTHON3} tests/testrunner.py
 
 tests: test
 
@@ -78,17 +80,17 @@ tests: test
 # Tests --------------------------------------------------------------
 
 console:
-	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && python
+	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && ${PYTHON}
 
 console3:
-	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && python3
+	export PYTHONPATH=${PYTHONPATH} && cd ${TESTS_DIR} && ${PYTHON3}
 
 
 # Cleaning -----------------------------------------------------------
 
 cleanpyc:
-	find . -name *.pyc -exec rm {} \;
-	find . -name __pycache__ -exec rm -rf {} \;
+	find tests dot core -name *.pyc -exec rm {} \;
+	find tests dot core -name __pycache__ -exec rm -rf {} \; -prune
 
 clean: cleanpyc
 	rm -rf ${DOCS_DIR}

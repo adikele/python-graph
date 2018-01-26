@@ -125,6 +125,9 @@ Jonathan Sternberg <jonathansternberg@gmail.com>
 Daniel Merritt <dmerritt@gmail.com>
 	* Fixed reading of XML-stored graphs with edge attributes.
 
+Sandro Tosi <morph@debian.org>
+	* Some improvements to Makefile
+
 
 LICENSE
 
