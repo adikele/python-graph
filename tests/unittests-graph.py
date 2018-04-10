@@ -70,7 +70,7 @@ class test_graph(unittest.TestCase):
             pass
         else:
             fail()
-        assert gr.node_neighbors == {0: [], 1: []}
+        assert gr.node_neighbors == {0: set(), 1: set()}
     
     def test_raise_exception_when_edge_added_to_non_existing_node(self):
         gr = graph()
@@ -81,7 +81,7 @@ class test_graph(unittest.TestCase):
             pass
         else:
             fail()
-        assert gr.node_neighbors == {0: [], 1: []}
+        assert gr.node_neighbors == {0: set(), 1: set()}
     
     def test_remove_node(self):
         gr = testlib.new_graph()
