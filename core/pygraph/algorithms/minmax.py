@@ -208,33 +208,28 @@ def shortest_path(graph, source):
     dist     = {source: 0}
     previous = {source: None}
 
-    # This is a sorted queue of (dist, node) 2-tuples. The first item in the
+    # This is a priority queue of (dist, node) 2-tuples. The first item in the
     # queue is always either a finalized node that we can ignore or the node
     # with the smallest estimated distance from the source. Note that we will
     # not remove nodes from this list as they are finalized; we just ignore them
     # when they come up.
     q = [(0, source)]
 
-    # The set of nodes for which we have final distances.
-    finished = set()
-
-    # Algorithm loop
     while len(q) > 0:
-        du, u = q.pop(0)
+        du, u = heapq.heappop(q)
 
-        # Process reachable, remaining nodes from u
-        if u not in finished:
-            finished.add(u)
-            for v in graph[u]:
-                if v not in finished:
-                    alt = du + graph.edge_weight((u, v))
-                    if (v not in dist) or (alt < dist[v]):
-                        dist[v] = alt
-                        previous[v] = u
-                        bisect.insort(q, (alt, v))
+        # Skip finished node
+        if dist[u] < du:
+            continue
+
+        for v in graph[u]:
+            alt = du + graph.edge_weight((u, v))
+            if (v not in dist) or (alt < dist[v]):
+                dist[v] = alt
+                previous[v] = u
+                heapq.heappush(q, (alt, v))
 
     return previous, dist
-
 
 
 def shortest_path_bellman_ford(graph, source):
