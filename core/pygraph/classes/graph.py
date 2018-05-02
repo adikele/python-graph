@@ -78,7 +78,7 @@ class graph(basegraph, common, labeling):
         @rtype:  list
         @return: List of nodes directly accessible from given node.
         """
-        return self.node_neighbors[node]
+        return list(self.node_neighbors[node])
     
     def edges(self):
         """
@@ -118,7 +118,7 @@ class graph(basegraph, common, labeling):
         if attrs is None:
             attrs = []
         if (not node in self.node_neighbors):
-            self.node_neighbors[node] = []
+            self.node_neighbors[node] = set()
             self.node_attr[node] = attrs
         else:
             raise AdditionError("Node %s already in graph" % node)
@@ -143,9 +143,9 @@ class graph(basegraph, common, labeling):
         """
         u, v = edge
         if (v not in self.node_neighbors[u] and u not in self.node_neighbors[v]):
-            self.node_neighbors[u].append(v)
+            self.node_neighbors[u].add(v)
             if (u != v):
-                self.node_neighbors[v].append(u)
+                self.node_neighbors[v].add(u)
                 
             self.add_edge_attributes((u,v), attrs)        
             self.set_edge_properties((u, v), label=label, weight=wt)
