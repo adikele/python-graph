@@ -1,17 +1,28 @@
+============
 python-graph
+============
+
+.. image:: https://travis-ci.org/Shoobx/python-graph.png?branch=master
+   :target: https://travis-ci.org/Shoobx/python-graph
+
+.. image:: https://coveralls.io/repos/github/Shoobx/python-graph/badge.svg?branch=master
+   :target: https://coveralls.io/github/Shoobx/python-graph?branch=master
+
+.. image:: https://img.shields.io/pypi/v/python-graph-core.svg
+    :target: https://pypi.org/project/python-graph-core/
+
+.. image:: https://img.shields.io/pypi/pyversions/python-graph-core.svg
+    :target: https://pypi.org/project/python-graph-core/
+
 A library for working with graphs in Python
---------------------------------------------------------------------------------
-
-
-SUMMARY
-
-python-graph is a library for working with graphs in Python.
+-------------------------------------------
 
 This software provides ﻿a suitable data structure for representing graphs and a
 whole set of important algorithms.
 
 
 INSTALLING
+----------
 
 To install the core module, run:
 
@@ -29,6 +40,7 @@ inside the module directory.
 
 
 DOCUMENTATION
+-------------
 
 To generate the API documentation for this package, run:
 
@@ -38,6 +50,7 @@ You'll need epydoc installed in your system.
 
 
 WEBSITE
+-------
 
 The latest version of this package can be found at:
 
@@ -49,6 +62,7 @@ Please report bugs at:
 
 
 PROJECT COMMITTERS
+------------------
 
 Pedro Matiello <pmatiello@gmail.com>
 	* Original author;
@@ -82,6 +96,7 @@ Tomaz Kovacic <tomaz.kovacic@gmail.com>
 
 
 CONTRIBUTORS
+------------
 
 Eugen Zagorodniy <e.zagorodniy@gmail.com>
 	* Mutual Accessibility (Tarjan's Algorithm).
@@ -130,6 +145,7 @@ Sandro Tosi <morph@debian.org>
 
 
 LICENSE
+-------
 
 This software is provided under the MIT license. See accompanying COPYING file
 for details.
