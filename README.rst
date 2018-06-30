@@ -14,6 +14,10 @@ python-graph
 .. image:: https://img.shields.io/pypi/pyversions/python-graph-core.svg
     :target: https://pypi.org/project/python-graph-core/
 
+.. image:: https://api.codeclimate.com/v1/badges/8e78b3479160f2c5cdd0/maintainability
+   :target: https://codeclimate.com/github/Shoobx/python-graph/maintainability
+   :alt: Maintainability
+
 A library for working with graphs in Python
 -------------------------------------------
 
