@@ -46,7 +46,7 @@ import bisect
 # Minimal spanning tree
 
 
-def minimal_spanning_tree_prim (graphFn, nodeX=None):
+def minimal_spanning_tree_prim (graphFn, root=None):
     """
     Minimal spanning tree constructed with prim's algorithm.
 
@@ -61,7 +61,7 @@ def minimal_spanning_tree_prim (graphFn, nodeX=None):
     @rtype:  list of (i) tuples containing edges and (ii) an integer (last item)
     @return: Generated minimal spanning tree (mst); weight of mst is appended to the list's end
     """
-    if nodeX == None: #If a node is not given
+    if root == None: #If a node is not given
         NodesNotInTreeList = graphFn.nodes() #all nodes in the beginning minus the one that has been taken in the tree
         NodeToBeAddedToTree = NodesNotInTreeList[0]
         NodesInTreeList = []
@@ -70,7 +70,7 @@ def minimal_spanning_tree_prim (graphFn, nodeX=None):
         edgesInTreeList = [ ] 
     else: #If a node is given
         NodesNotInTreeList = graphFn.nodes() #all nodes in the beginning minus the one that has been taken in the tree
-        NodeToBeAddedToTree = nodeX
+        NodeToBeAddedToTree = root
         NodesInTreeList = []
         NodesInTreeList.append(NodeToBeAddedToTree)
         NodesNotInTreeList.remove(NodeToBeAddedToTree) 
