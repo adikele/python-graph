@@ -92,12 +92,12 @@ def minimal_spanning_tree_prim (graphFn, root=None):
         NodesInTreeList.append (selectedNode) #STEP 3: add the 'selected node' to the NodesInTreeList list
         NodesNotInTreeList.remove(selectedNode)  #STEP 4: remove the 'selected node' from the NodesNotInTreeList list
 
-    mstWtTotal = 0
+    #mstWtTotal = 0
     
-    for a in edgesInTreeList:
-        mstWtTotal = mstWtTotal + graphFn.edge_weight((a))
+    #for a in edgesInTreeList:
+        #mstWtTotal = mstWtTotal + graphFn.edge_weight((a))
 
-    edgesInTreeList.append(mstWtTotal)
+    #edgesInTreeList.append(mstWtTotal)
 
     return (edgesInTreeList)  
 
