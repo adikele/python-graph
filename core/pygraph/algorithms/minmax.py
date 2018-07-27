@@ -44,12 +44,12 @@ import heapq
 import bisect
 
 # Minimal spanning tree
-
-
 def minimal_spanning_tree_prim (graphFn, root=None):
     """
+    author:Aditya Kelekar 
     Minimal spanning tree constructed with prim's algorithm.
-
+    returns tree in dict form
+    
     @attention: Minimal spanning tree is meaningful only for weighted graphs.
 
     @type  graph: graph
@@ -58,8 +58,8 @@ def minimal_spanning_tree_prim (graphFn, root=None):
     @type  root: node
     @param root: Optional root node 
 
-    @rtype:  list of (i) tuples containing edges and (ii) an integer (last item)
-    @return: Generated minimal spanning tree (mst); weight of mst is appended to the list's end
+    @rtype:  dict of edges
+    @return: Generated minimal spanning tree (mst)
     """
     if root == None: #If a node is not given
         NodesNotInTreeList = graphFn.nodes() #all nodes in the beginning minus the one that has been taken in the tree
@@ -92,14 +92,16 @@ def minimal_spanning_tree_prim (graphFn, root=None):
         NodesInTreeList.append (selectedNode) #STEP 3: add the 'selected node' to the NodesInTreeList list
         NodesNotInTreeList.remove(selectedNode)  #STEP 4: remove the 'selected node' from the NodesNotInTreeList list
 
-    #mstWtTotal = 0
+    #mstWtTotal = 0 #setZ: commenting out, so mst is no longer appended
     
     #for a in edgesInTreeList:
-        #mstWtTotal = mstWtTotal + graphFn.edge_weight((a))
+    #    mstWtTotal = mstWtTotal + graphFn.edge_weight((a))
 
-    #edgesInTreeList.append(mstWtTotal)
+    #edgesInTreeList.append(mstWtTotal) #setZ: commenting out, so mst is no longer appended
 
-    return (edgesInTreeList)  
+    edgesInTreeDict = {}
+    helperConvertListtoDict (edgesInTreeList, edgesInTreeDict)
+    return (edgesInTreeDict)  
 
 
 
