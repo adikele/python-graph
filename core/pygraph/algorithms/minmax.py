@@ -43,6 +43,16 @@ from pygraph.classes.unionfind import UnionFind
 import heapq
 import bisect
 
+#helper function to convert a list of tuples into a dictionary -- first element of a tuple is made the key when converting to dict form
+#if more than one tuple has the same first element, for the rest of the tuples, the second element is made the key when converting to dict form
+def helperConvertListtoDict(listX, dictY):
+    for a in listX:
+        if a[0] not in dictY:
+            dictY [a[0]] = a[1]
+        else:
+            dictY [a[1]] = a[0]
+    return dictY
+
 # Minimal spanning tree
 def minimal_spanning_tree_prim (graphFn, root=None):
     """
