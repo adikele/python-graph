@@ -43,10 +43,10 @@ from copy import deepcopy
 
 # helpers
 
-def tree_weight(gr, tree):  # tree as a List of Tuples
+def tree_weight(gr, tree):
     sum = 0;
     for each in tree:
-        sum = sum + gr.edge_weight(each)
+        sum = sum + gr.edge_weight((each, tree[each]))
     return sum
 
 def add_spanning_tree(gr, st):
